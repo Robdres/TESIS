@@ -1,0 +1,286 @@
+\documentclass[a4paper, 12pt]{report}
+
+%% -------- PREAMBLE -------- %%
+\usepackage{cite}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr, fancybox}
+
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{float}
+\pagestyle{fancy}
+
+\fancypagestyle{plain}{
+    \fancyhf{} % clear all header and footer fields
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyhead[R]{\large\thepage}
+    \fancyheadoffset[R]{10pt}
+}
+
+
+\setlength{\headheight}{24pt}
+
+\usepackage{listings}
+\lstset{frame=tb,
+  breaklines=true,
+  showstringspaces=false,
+  columns=flexible,
+  numbers=none,
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  tabsize=3
+}
+\usepackage[a4paper,
+  total={5.5in, 8in}
+  ]{geometry}
+\usepackage{slashed}
+\usepackage{changepage}
+\usepackage{bbm}
+\usepackage{setspace}  
+\usepackage{float}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{enumerate}
+\usepackage{xy}
+\usepackage{hyperref}
+\usepackage[mathscr]{euscript}
+\rfoot{\thepage}
+\hypersetup{breaklinks=true}
+\newcommand{\fsl}[1]{{\ooalign{\(#1\)\cr\hidewidth\(/\)\hidewidth\cr}}}
+
+\newtheorem{defn}{Definición}[section]
+\newtheorem{thm}{Teorema}
+\newtheorem{lem}{Lema}[section]
+\newtheorem{prop}{Proposición}[section]
+\newtheorem{cor}[thm]{Corolario}
+\newtheorem{ex}{Ejemplo}
+\newtheorem{ob}{Observación}
+\newcommand{\QED}{\hfill {\qed}}
+
+%% -------- DOCUMENT -------- %%
+
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+\LARGE\textbf{UNIVERSIDAD SAN FRANCISCO DE QUITO}\\
+\setlength{\parskip}{5mm}
+\LARGE\textbf{Colegio de Ciencias e Ingenierías}
+
+
+\setlength{\parskip}{40mm}
+\begin{LARGE}
+  \textbf{Estudio de uso de testores en la creación de redes de clasificación de imágenes para el modelado 3D de su rostro}
+\end{LARGE}
+
+
+\setlength{\parskip}{20mm}
+\begin{huge}
+\textbf{Roberto Andrés Alvarado Moreira}\\
+\textbf{Julio César Ibarra Fiallo, Ph.D.}
+\end{huge}
+
+
+
+\setlength{\parskip}{20mm}
+\begin{large}
+Proyecto Integrador presentado como\\
+requisito para la obtención del título de Matemático
+\end{large}
+
+\vfill
+Quito, \today
+
+
+\setcounter{page}{1}
+
+\thispagestyle{empty}
+\end{center}
+
+\newpage
+
+\thispagestyle{empty}
+\begin{center}
+
+\Large\textbf{Universidad San Francisco De Quito}\\
+\Large\textbf{Colegio de Ciencias e Ingenierías}
+\vspace{0.5cm}
+
+\huge\textbf{HOJA DE APROBACIÓN}
+\vspace{1.5cm}
+
+\large\textbf{Estudio de uso de testores en la creación de una red de clasificación de rostros para el modelado 3D}
+
+\vspace{1cm}
+\begin{LARGE}
+\textbf{Roberto Andrés Alvarado Moreira}
+\end{LARGE}
+\end{center}
+
+\vspace{2cm}
+
+\begin{minipage}{0.6\linewidth}   
+
+  \Large Julio César Ibarra Fiallo Ph.D.\\
+  \vspace{0.1cm}
+  \small Director de Tesis
+  \vspace{1cm}
+
+  \Large Antonio Di Teodoro, Ph.D.\\
+  \vspace{0.1cm}
+  \small Director de la Carrera de Matemáticas
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+  \Large ..........................\\
+  \vspace{0.8cm}\\                    
+  \Large ..........................
+\end{minipage}
+
+\vfill 
+\begin{center}
+\large Quito, \today
+\end{center}
+
+\newpage
+\begin{center}
+\begin{large}
+\copyright \hspace{0.1cm} \textbf{DERECHOS DE AUTOR}
+\end{large}
+\end{center}
+
+\setlength{\parskip}{5mm}
+
+\noindent
+\large Por medio del presente documento certifico que he leído todas las Políticas y Manuales de la Universidad San Francisco de Quito USFQ, incluyendo la Política de Propiedad Intelectual USFQ, y estoy de acuerdo con su contenido, por lo que los derechos de propiedad intelectual del presente trabajo quedan sujetos a lo dispuesto en esas Políticas. 
+
+\noindent
+\large Asimismo, autorizo a la USFQ para que realice la digitalización y publicación de este trabajo en el repositorio virtual, de conformidad a lo dispuesto en la Ley Orgánica de Educación Superior del Ecuador.
+
+
+
+\vspace{2cm}
+\noindent
+\begin{minipage}{0.18\linewidth}   
+  \large Firma\\
+  \vspace{1cm}
+
+  \large Nombre:
+  \vspace{1cm}
+
+  \large C.I.:
+  \vspace{1cm}
+
+  \large Fecha:
+  \vspace{1cm}
+
+\end{minipage}
+\begin{minipage}{0.8\linewidth}
+  \vspace{0.3cm}
+  \large .........................................................\\
+  \vspace{1cm}\\
+  \large Roberto Andrés Alvarado Moreira
+  \vspace{1cm}\\
+  \large 1104718141
+  \vspace{1cm}\\
+  \large Quito, \today
+  \vspace{1cm}
+
+\end{minipage}
+
+
+\newpage
+\begin{center}
+\begin{LARGE}
+\textbf{ACLARACIÓN PARA PUBLICACIÓN}
+\end{LARGE}
+\end{center}
+
+\setlength{\parskip}{5mm}
+
+\textbf{Nota:} El presente trabajo, en su totalidad o cualquiera de sus partes, no debe ser considerado como una publicación, incluso a pesar de estar disponible sin restricciones a través de un repositorio institucional. Esta declaración se alinea con las prácticas y recomendaciones presentadas por el Committee on Publication Ethics COPE descritas por Barbour et al. (2017) Discussion document on best practice for issues around theses publishing, disponible en \url{http://bit.ly/COPETheses}
+
+\setlength{\parskip}{10mm}
+\begin{center}
+\begin{LARGE}
+\textbf{UNPUBLISHED DOCUMENT}
+\end{LARGE}
+\end{center}
+
+\setlength{\parskip}{5mm}
+
+\textbf{Note:} The following capstone project is available through Universidad San Francisco de Quito USFQ institutional repository. Nonetheless, this project – in whole or in part – should not be considered a publication. This statement follows the recommendations presented by the Committee on Publication Ethics COPE described by Barbour et al. (2017) Discussion document on best practice for issues around theses publishing available on \url{http://bit.ly/COPETheses}
+
+
+
+
+\chapter*{Dedicatoria}
+%\newpage
+\begin{flushright}
+  \Large A mis padres, mis hermanas, mi familia y mis amigos, \\
+  que sin esperar nada me apoyaron
+\end{flushright}
+
+
+\chapter*{Agradecimiento}
+
+Quiero expresar mi profundo agradecimiento a mi tutor de tesis,
+Julio Ibarra, por su invaluable orientación, apoyo incondicional y
+paciencia durante todo el proceso de investigación. Gracias a su experiencia y
+conocimientos, que han logrado formarme de la mejor manera posible. 
+A David Hervas, mi primer profesor de la universidad, que
+con su manera tan especial de ver las matemáticas logró contagiar en mi el amor
+por ellas.
+
+Además quiero agradecer todas las experiencias que pude conseguir a lo
+largo de mi vida, me han hecho crecer como persona y en ellas he conocido a
+gente maravillosa, quiero agradecerles a:
+
+A mi papá, a mi mamá y mis hermanas, a toda mi familia, a la USFQ y todos mis
+profesores; a Gerson, Andrés V y Natanael, a Marco, Eduarda, Alejandra, Camila V,
+Camila P, Mille, Meli y Andrés, a Pablo, José, Adrián y Ricardo, a Mateo y
+Alejandro.
+
+ 
+\chapter*{Resumen} 
+\singlespacing
+
+
+\noindent
+\textbf{\textit{Palabras clave}:} Redes Neuronales, Modelos de Clasificación,
+Testores, Conjuntos Rugosos, Reductos, UMDA, Redes Generativas.
+ 
+
+\chapter*{Abstract}
+
+The first part of this work studies the behavior of a fractional sliding mode controller designed from a first-order plus fractional dead time model. The controller design applied to this model uses the power of fractional order calculus to describe and represent real chemical systems as a reduced order model and, from it, apply the sliding mode control procedure to develop the controller. It sought to develop the fractional control law for a fractional first-order model with delay. With the particularity that the error is included in the time delay approximation. In order to analyze, if when the error tends to zero, both control laws converge to the same one. 
+Subsequently, a generalization of the fractional first-order model with delay and the development of its fractional control law is presented, with the objective of analyzing over which parameters this law converges to the fractional control law of the first-order model. 
+In the second part of this work, a dead-time compensator structure (DTC) with sliding mode control and fractional computation is integrated to provide a robust DTC for nonlinear systems with extended delay. The provided approach gives the sliding mode control (SMC) structure predictive characteristics, improving the transient responsiveness for dead-time processes, and SMC provides predictive structure robustness for model mismatches. Fractional calculus is used to create a reduced-order model. The new method uses a fractional-order model with no delays. The slip surface is intended to be achieved despite modeling errors, ensuring robustness. Therefore, a control design from a Smith predictor scheme is presented and the fractional control law for the fractional transfer function is calculated. Then, a generalization of the transfer function without delay is presented and its fractional control law is obtained in order to study under which parameters both laws converge to the same one. Then, an analysis of the behavior of the parameter associated with the fractional derivative when it tends to one in the transfer function without delay is performed, in order to compare the behavior of fractional and integer derivatives and of the control laws obtained in the process. Finally, the same analysis of the generalization of the fractional first-order model is presented, but instead of considering the delay approximation, the fractional control law with Mittag-Leffler is studied. 
+
+\textbf{\textit{Keywords}:} First order model with delay, transfer function without delay, fractional calculus, sliding mode control, time delay approximation, fractional control law, Mittag-Leffler.
+
+\tableofcontents % indice de contenidos
+
+\clearpage
+%\addcontentsline{toc}{chapter}{Lista de Figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+
+\chapter{Introducción}\label{cap.introduccion}
+\chapter{Resultados Principales}
+\chapter*{Resultados y conclusiones}
+\addcontentsline{toc}{chapter}{Bibliografía}
+
+\bibliographystyle{apalike}
+\bibliography{refs}
+\bibliography{librero1,librero2}
+% \begin{thebibliography}{X}
+
+% \end{thebibliography}
+
+\end{document}
