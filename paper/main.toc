@@ -1,4 +1,4 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {1}Introducción}{11}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Resultados Principales}{12}{chapter.2}%
-\contentsline {chapter}{Bibliografía}{13}{chapter*.7}%
+\contentsline {chapter}{\numberline {1}Introduccion}{11}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Definiciones y Métodos}{12}{chapter.2}%
+\contentsline {chapter}{Bibliografía}{12}{chapter.2}%

@@ -3,6 +3,8 @@
 %% -------- PREAMBLE -------- %%
 \usepackage{cite}
 \usepackage[spanish]{babel}
+\usepackage{babel} 
+\usepackage{apalike}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
@@ -14,7 +16,12 @@
 \usepackage{blindtext}
 \usepackage{multicol}
 \usepackage{float}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display] {\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
 \pagestyle{fancy}
+
 
 \fancypagestyle{plain}{
     \fancyhf{} % clear all header and footer fields
@@ -25,7 +32,7 @@
 }
 
 
-\setlength{\headheight}{24pt}
+\setlength{\headheight}{18.1pt}
 
 \usepackage{listings}
 \lstset{frame=tb,
@@ -150,7 +157,6 @@ Matemático
 \vspace{5cm}
 \noindent
 \begin{minipage}{0.3\linewidth}   
-
   \small Nombres y apellidos:
   \vspace{0.7cm}
 
@@ -202,16 +208,41 @@ Matemático
 
 
 
-\chapter*{Dedicatoria}
+\newpage
+\begin{center}
+  \large \textbf{RESUMEN}
+\end{center}
+
+\noindent
+\textbf{\textit{Palabras clave}:} Redes Neuronales, Modelos de Clasificación,
+Testores, Conjuntos Rugosos, Reductos, UMDA, Redes Generativas.
+ 
+
+\newpage
+\begin{center}
+  \large \textbf{ABSTRACT}
+\end{center}
+
+
+\textbf{\textit{Keywords}:} First order model with delay, transfer function without delay, fractional calculus, sliding mode control, time delay approximation, fractional control law, Mittag-Leffler.
+
+\newpage
+\tableofcontents % indice de contenidos
+
+\newpage
+\listoffigures % indice de figuras
+\newpage
+\section*{Dedicatoria}
 %\newpage
 \begin{flushright}
   \Large A mis padres, mis hermanas, mi familia y mis amigos, \\
   que sin esperar nada me apoyaron
 \end{flushright}
 
-
-\chapter*{Agradecimiento}
-
+\newpage
+\begin{center}
+  \textbf{AGRADECIMIENTO}
+\end{center}
 Quiero expresar mi profundo agradecimiento a mi tutor de tesis,
 Julio Ibarra, por su invaluable orientación, apoyo incondicional y
 paciencia durante todo el proceso de investigación. Gracias a su experiencia y
@@ -230,39 +261,23 @@ Camila P, Mille, Meli y Andrés, a Pablo, José, Adrián y Ricardo, a Mateo y
 Alejandro.
 
  
-\chapter*{Resumen} 
-\singlespacing
-
-
-\noindent
-\textbf{\textit{Palabras clave}:} Redes Neuronales, Modelos de Clasificación,
-Testores, Conjuntos Rugosos, Reductos, UMDA, Redes Generativas.
- 
-
-\chapter*{Abstract}
-
-The first part of this work studies the behavior of a fractional sliding mode controller designed from a first-order plus fractional dead time model. The controller design applied to this model uses the power of fractional order calculus to describe and represent real chemical systems as a reduced order model and, from it, apply the sliding mode control procedure to develop the controller. It sought to develop the fractional control law for a fractional first-order model with delay. With the particularity that the error is included in the time delay approximation. In order to analyze, if when the error tends to zero, both control laws converge to the same one. 
-Subsequently, a generalization of the fractional first-order model with delay and the development of its fractional control law is presented, with the objective of analyzing over which parameters this law converges to the fractional control law of the first-order model. 
-In the second part of this work, a dead-time compensator structure (DTC) with sliding mode control and fractional computation is integrated to provide a robust DTC for nonlinear systems with extended delay. The provided approach gives the sliding mode control (SMC) structure predictive characteristics, improving the transient responsiveness for dead-time processes, and SMC provides predictive structure robustness for model mismatches. Fractional calculus is used to create a reduced-order model. The new method uses a fractional-order model with no delays. The slip surface is intended to be achieved despite modeling errors, ensuring robustness. Therefore, a control design from a Smith predictor scheme is presented and the fractional control law for the fractional transfer function is calculated. Then, a generalization of the transfer function without delay is presented and its fractional control law is obtained in order to study under which parameters both laws converge to the same one. Then, an analysis of the behavior of the parameter associated with the fractional derivative when it tends to one in the transfer function without delay is performed, in order to compare the behavior of fractional and integer derivatives and of the control laws obtained in the process. Finally, the same analysis of the generalization of the fractional first-order model is presented, but instead of considering the delay approximation, the fractional control law with Mittag-Leffler is studied. 
-
-\textbf{\textit{Keywords}:} First order model with delay, transfer function without delay, fractional calculus, sliding mode control, time delay approximation, fractional control law, Mittag-Leffler.
-
-\tableofcontents % indice de contenidos
 
 \clearpage
 %\addcontentsline{toc}{chapter}{Lista de Figuras} % para que aparezca en el indice de contenidos
-\listoffigures % indice de figuras
 
-\chapter{Introducción}\label{cap.introduccion}
-\chapter{Resultados Principales}
-\chapter*{Resultados y conclusiones}
+\chapter{Introduccion}\label{cap.introduccion}
+Dentro del estudio de las redes neuronales el uso de testores se muestra como
+uno de los nuevos métodos para la optimización y manejo de los modelos de
+clasificación, se
+
+\cite{testor}
+
+\chapter{Definiciones y Métodos}\label{cap.testores}
+
 \addcontentsline{toc}{chapter}{Bibliografía}
 
-\bibliographystyle{apalike}
-\bibliography{refs}
-\bibliography{librero1,librero2}
-% \begin{thebibliography}{X}
 
-% \end{thebibliography}
+\bibliographystyle{apalike}
+\bibliography{bibliography} 
 
 \end{document}
